@@ -2,7 +2,7 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const colors = require("colors");
 require("dotenv").config();
-const dbConfig = require ("./config/dbConfig")
+const dbConfig = require("./config/dbConfig");
 
 const app = express();
 const port = process.env.PORT || 3003;
