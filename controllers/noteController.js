@@ -6,7 +6,7 @@ const insertNote = async (req, res, next) => {
   const { title, content, tag, isCompleted } = req.body;
 
   let data = {
-    _id: uuidv4(),
+    _id: `RDC-${uuidv4()}`,
     title: title,
     content: content,
     tag: tag,
@@ -16,19 +16,28 @@ const insertNote = async (req, res, next) => {
   };
 
   const insertRecord = await notes.insertOne(data);
-  console.log("insertRecord: ", insertRecord);
 
   res.status(200).json({
     statusCode: 200,
     status: "success",
     message: "New note inserted successfully",
-    insertRecord: insertRecord
+    insertRecord: insertRecord,
   });
 };
 
 const readNoteById = async (req, res, next) => {};
 
-const readAllNotes = async (req, res, next) => {};
+const readAllNotes = async (req, res, next) => {
+  const allNotes = await notes.find({}).toArray();
+
+  res.status(200).json({
+    statusCode: 200,
+    status: "success",
+    message: "All Notes Fetched successfully",
+    totalNotes: allNotes.length,
+    notes: allNotes,
+  });
+};
 
 const deleteNoteById = async (req, res, next) => {};
 
