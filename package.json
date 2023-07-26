@@ -1,0 +1,22 @@
+{
+  "name": "2-mongodb-node-crud",
+  "version": "1.0.0",
+  "description": "Full NodeJS and MongoDB Crud Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start-server": "node index.js"
+  },
+  "keywords": [],
+  "author": "Alex Simisi Nta",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.1",
+    "uuid": "^9.0.0"
+  }
+}
