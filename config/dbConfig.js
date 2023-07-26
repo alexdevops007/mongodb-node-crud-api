@@ -3,7 +3,7 @@ const colors = require("colors");
 require("dotenv").config();
 
 const client = new MongoClient(process.env.DB_URI);
-const dbName = "MongoNodeCrud";
+const dbName = "notesdb";
 let db;
 
 async function main() {
